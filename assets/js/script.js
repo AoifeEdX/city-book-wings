@@ -1,5 +1,3 @@
-//! Vanilla JS:
-
 // Add an event listener to the form for the 'submit' event
 document.getElementById('flightSearchForm').addEventListener('submit', function (event) {
 	event.preventDefault(); // Prevent the default form submission behavior
@@ -16,41 +14,63 @@ document.getElementById('flightSearchForm').addEventListener('submit', function 
 	console.log('Date:', departureDate);
 	console.log('---- Getting results (please wait...): ----');
 
-	//? API documentation: https://rapidapi.com/ntd119/api/booking-com13
-	//? This next snippet of code is from the API site:
-	const url = `https://booking-com13.p.rapidapi.com/flights/one-way?location_from=${encodeURIComponent(locationFrom)}&location_to=${encodeURIComponent(locationTo)}&departure_date=${departureDate}&page=1`;
+	// Fetch exchange rate data
+	//? API documentation: https://www.exchangerate-api.com/docs/pair-conversion-requests
+	var exchangeRateAPIKey = 'a4e7dfed1a6162f81c023788';
+	var exchangeRateURL = 'https://v6.exchangerate-api.com/v6/' + exchangeRateAPIKey + '/pair/USD/GBP';
 
-	const options = {
-		method: 'GET',
-		headers: {
-			'X-RapidAPI-Key': 'ccc9ddd496msh4060d25d12d754cp12e4a2jsn9b1f6f242732',
-			'X-RapidAPI-Host': 'booking-com13.p.rapidapi.com'
-		}
-	};
-
-	// Fetch data from the API using the constructed URL and options
-	fetch(url, options)
+	fetch(exchangeRateURL)
 		.then(function (response) {
-			return response.json(); // Parse the response as JSON
+			return response.json();
 		})
-		.then(function (data) {
-			console.log(data); // Log the response data to the console
-			updateSearchResults(data); // Call the updateSearchResults function with the response data
+		.then(function (exchangeRateData) {
+			var exchangeRate = exchangeRateData.conversion_rate;
+
+			//? API documentation: https://rapidapi.com/ntd119/api/booking-com13
+			//? This next snippet of code is from the API site:
+			const url = 'https://booking-com13.p.rapidapi.com/flights/one-way?location_from=' + encodeURIComponent(locationFrom) + '&location_to=' + encodeURIComponent(locationTo) + '&departure_date=' + departureDate + '&page=1&number_of_stops=NonstopFlights';
+
+			const options = {
+				method: 'GET',
+				headers: {
+					'X-RapidAPI-Key': 'ccc9ddd496msh4060d25d12d754cp12e4a2jsn9b1f6f242732',
+					'X-RapidAPI-Host': 'booking-com13.p.rapidapi.com'
+				}
+			};
+
+			// Fetch data from the flight API using the constructed URL and options
+			fetch(url, options)
+				.then(function (response) {
+					return response.json();
+				})
+				.then(function (data) {
+					console.log(data);
+					updateSearchResults(data, exchangeRate);
+				})
+				.catch(function (error) {
+					console.error(error);
+				});
 		})
 		.catch(function (error) {
-			console.error(error); // Log any errors that occur during the fetch
+			console.error(error);
 		});
 });
 
 // Function to update the search results on the webpage
-function updateSearchResults(results) {
+function updateSearchResults(results, exchangeRate) {
 	var resultsContainer = document.getElementById('searchResults'); // Get the container where results will be displayed
 
-	// Check if the API response contains the expected structure and data
 	if (results.status && results.data && results.data.flights) {
 		var flights = results.data.flights.slice(0, 6); // Extract the first six flight results
 
 		if (flights.length > 0) {
+			// Sort the flights based on the price in ascending order
+			flights.sort(function (a, b) {
+				var priceA = a.travelerPrices[0].price.price.value;
+				var priceB = b.travelerPrices[0].price.price.value;
+				return priceA - priceB;
+			});
+
 			var resultList = document.createElement('div'); // Create a container for result cards
 			resultList.className = 'row'; // Apply Bootstrap row class
 
@@ -63,7 +83,22 @@ function updateSearchResults(results) {
 				var airportTo = flight.bounds[0].segments[0].destination.cityName;
 				var departureTime = new Date(flight.bounds[0].segments[0].departuredAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 				var arrivalTime = new Date(flight.bounds[0].segments[0].arrivedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
 				var price = flight.travelerPrices[0].price.price.value;
+
+				// Convert the price to a string
+				var priceString = price.toString();
+
+				// Insert a decimal point before the last two digits
+				var modifiedPriceString = priceString.slice(0, -2) + '.' + priceString.slice(-2);
+
+				// Convert the modified string back to a numeric format if needed
+				var modifiedPrice = parseFloat(modifiedPriceString);
+
+				// Now 'modifiedPrice' contains the value with a decimal point before the last two digits
+
+				// Convert the price to GBP using the exchange rate
+				var priceInGBP = (modifiedPrice * exchangeRate).toFixed(2);
 
 				// Create a Bootstrap card for each flight result
 				var card = document.createElement('div');
@@ -71,7 +106,7 @@ function updateSearchResults(results) {
 				card.innerHTML =
 					'<div class="card-body">' +
 					'<h5 class="card-title">' + airline + ' - ' + flightName + '</h5>' +
-					'<p class="card-text">From: ' + airportFrom + '<br>To: ' + airportTo + '<br>Departure Time: ' + departureTime + '<br>Arrival Time: ' + arrivalTime + '<br>Price: £' + price + '</p>' +
+					'<p class="card-text">From: ' + airportFrom + '<br>To: ' + airportTo + '<br>Departure Time: ' + departureTime + '<br>Arrival Time: ' + arrivalTime + '<br>Price: £' + priceInGBP + '</p>' +
 					'<a href="#" class="btn btn-primary">Book Flight</a>' +
 					'</div>';
 

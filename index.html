@@ -53,31 +53,33 @@
 								recommendations</span>
 							for your ideal&nbsp;holiday.</h2>
 					</div>
-						<div class="row">
-					<form id="flightSearchForm">
-						<div class="row mb-3">
-							<div class="col-md-6">
-								<label for="from" class="form-label fw-bold">Depart From:</label>
-								<input type="text" class="form-control" id="locationFrom"
-									placeholder="City, Country (e.g. Dublin, Ireland)" required>
+					<div class="row">
+						<div id="autocompleteSuggestions" class="autocomplete-suggestions"></div>
+						<form id="flightSearchForm">
+							<div class="row mb-3">
+								<div class="col-md-6">
+									<label for="from" class="form-label fw-bold">Depart From:</label>
+									<input type="text" class="form-control" id="locationFrom"
+										placeholder="City, Country (e.g. Dublin, Ireland)" required>
+								</div>
+								<div class="col-md-6">
+									<label for="to" class="form-label fw-bold">Destination:</label>
+									<input type="text" class="form-control" id="locationTo"
+										placeholder="City, Country (e.g Paris, France)" required>
+								</div>
 							</div>
-							<div class="col-md-6">
-								<label for="to" class="form-label fw-bold">Destination:</label>
-								<input type="text" class="form-control" id="locationTo" placeholder="City, Country (e.g Paris, France)"
-									required>
+							<div class="row mb-3">
+								<div class="col-md-6">
+									<label for="departureDate" class="form-label fw-bold">Departure Date:</label>
+									<input type="date" class="form-control" id="departureDate" required>
+								</div>
+								<div class="col-md-6">
+									<button type="submit" class="btn btn-primary btn-block mt-4 fs-5"><i class="fas fa-search"></i>
+										Search</button>
+								</div>
 							</div>
-						</div>
-						<div class="row mb-3">
-							<div class="col-md-6">
-								<label for="departureDate" class="form-label fw-bold">Departure Date:</label>
-								<input type="date" class="form-control" id="departureDate" required>
-							</div>
-							<div class="col-md-6">
-								<button type="submit" class="btn btn-primary btn-block mt-4 fs-5"><i class="fas fa-search"></i> Search</button>
-							</div>
-						</div>
-					</form>
-				</div>
+						</form>
+					</div>
 	</section>
 
 	<!-- Main Content Section -->
@@ -99,17 +101,18 @@
 		<!-- Blurb Section -->
 		<section id="blurb" class="my-5 p-5 text-center">
 			<p class="fs-5 mt-3">
-				We believe that for <strong>amazing trips</strong>, you need <strong>amazing books</strong>, so here are our recommended books for your	destination:
+				We believe that for <strong>amazing trips</strong>, you need <strong>amazing books</strong>, so here are our
+				recommended books for your destination:
 			</p>
 		</section>
 
-			<!-- Book Data Section -->
-			<section id="books" class="border border-2 my-5 p-5 bg-light">
-				<h2 class="mb-5">Recommended Reading:</h2>
-				<div>
-					<!-- Book results will be displayed here -->
-				</div>
-			</section>
+		<!-- Book Data Section -->
+		<section id="books" class="border border-2 my-5 p-5 bg-light">
+			<h2 class="mb-5">Recommended Reading:</h2>
+			<div>
+				<!-- Book results will be displayed here -->
+			</div>
+		</section>
 
 		<!-- About Section -->
 		<section id="about" class="border border-2 my-5 p-5 bg-light">
