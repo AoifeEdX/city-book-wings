@@ -1,8 +1,8 @@
-function getbooks() {
-  //const queryURL = `http://openlibrary.org/search.json?q=london`
+const cityName = document.getElementById("searchBook").value;
 
-  const queryURL = `http://openlibrary.org/subjects/london.json?q=london`;
-  // /subjects/love.json
+function getbooks() {
+  const queryURL = `http://openlibrary.org/search.json?subject=${cityName}`
+
 // parse in city under 'subject' parameter
   fetch(queryURL)
     .then(function (response) {
@@ -14,11 +14,6 @@ function getbooks() {
 }
 getbooks();
 
-function bookSubject() {
-  var flightdestination = document.getElementById("citysearch").value;
-  alert(flightdestination);
-}
-//bookSubject()
 
 // bookSubject()
 //a form input that allows the user to input a subject(city)
@@ -27,3 +22,12 @@ function bookSubject() {
 
 //using for loop, create array to store first few book results
 //create 4 placeholder slots in cards for books in html file
+//return index 0,1,2,3
+// author_name (sometimes an array)
+//first_publish_year
+//number_of_pages_median
+//subject (an array)
+
+// for (let data = 0; data < 20; data++) {
+//   const element = array[data];
+// }
