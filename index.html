@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CityBookWings</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
         integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -21,7 +20,7 @@
 
         <!-- Nav -->
         <nav class="navbar navbar-expand-lg navbar-dark py-5 sticky" id="navbar">
-            <div class="container" id="stickynav" >
+            <div class="container" id="stickynav">
                 <a class="navbar-brand fs-3" href="/">CITY<span class="fw-normal text-warning">BOOK</span>WINGS</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu"
                     aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
@@ -140,36 +139,59 @@
     </div>
     <!-- End of Results from APIS Section -->
 
-    <!-- About Section -->
+    <!-- Testimonial Section -->
     <section id="about" class="bg-white border">
         <div class="container p-5">
             <div class="row align-items-center">
                 <div class="col-lg-6 info-left p-3">
-                    <img class="img-fluid" src="./assets/images/holiday-bus.jpg" alt="Japanese city and book">
+                    <!-- Image Slideshow -->
+                    <div class="slideshow-container">
+                        <!-- First Testimonial -->
+                        <div class="mySlides fade">
+                            <img class="img-fluid" src="./assets/images/testimonial.jpg" alt="Testimonial">
+                        </div>
+                        <!-- Second Testimonial -->
+                        <div class="mySlides fade">
+                            <img class="img-fluid" src="./assets/images/testimonial2.jpg" alt="Testimonial2">
+                        </div>
+                        <!-- Third Testimonial -->
+                        <div class="mySlides fade">
+                            <img class="img-fluid" src="./assets/images/testimonial3.jpg" alt="Testimonial3">
+                        </div>
+                    </div>
                 </div>
+                <!-- End of image slideshow -->
+    
+                <!-- Testimonial Text Slideshow -->
                 <div class="col-lg-6 info-right p-5">
-                    <h1 class="my-5">What is <strong>CityBookWings</strong>?</h1>
-                    <h5 class="my-4">
-                        <strong>CityBookWings</strong> provides flight information for any city you'd like to travel
-                        to, and recommends books about that city that you might like to read.
-                    </h5>
+                    <div class="slideshow-text-container">
+                        <div class="mySlidesText fade">
+                            <h1 class="my-5">Sharon Gibson</h1>
+                            <h5 class="my-4">
+                                CityBookWings is my go to website for holidays and reading. I cannot recommend them enough.
+                            </h5>
+                        </div>
+                        <div class="mySlidesText fade">
+                            <h1 class="my-5">Betty Collins</h1>
+                            <h5 class="my-4">
+                                I absolutely love CityBookWings, wether I travel or not I love using it to find amazing destinations for great prices or just to find a great book.
+                            </h5>
+                        </div>
+                        <div class="mySlidesText fade">
+                            <h1 class="my-5">Katy Smith</h1>
+                            <h5 class="my-4">
+                                I travel all the time and I also love reading whilst I wait in the airport or while on a plane. I found it difficult to find new books, but with CityBookWings now I know I can find good book every time I travel.
+                            </h5>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-lg-6 info-left p-5">
-                    <h1 class="my-5">Make your trip memorable</h1>
-                    <h5 class="my-4">
-                        Whether you're planning a trip or simply interested in books about a specific location,
-                        <strong>CityBookWings</strong> has you covered.
-                    </h5>
-                </div>
-                <div class="col-lg-6 info-right p-3">
-                    <img class="img-fluid" src="./assets/images/holidaybags.jpg" alt="UK city and book">
-                </div>
+
+                <!-- End of text slideshow -->
             </div>
         </div>
     </section>
-    <!-- End of About Section -->
+
+    <!-- End of Testimonial Section -->
 
     <!-- Recommended Cities Section -->
     <section id="flights" class="p-5 bg-light border">
@@ -252,8 +274,8 @@
                 <!-- Romeo and Juliet Card -->
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card h-100">
-                        <img src="./assets/images/romeoandjuliet3.jpg" class="card-img-top"
-                            alt="Romeo and Juliet" height="175rem">
+                        <img src="./assets/images/romeoandjuliet3.jpg" class="card-img-top" alt="Romeo and Juliet"
+                            height="175rem">
                         <div class="card-body d-flex flex-column">
                             <p class="card-title">Romeo and Juliet</p>
                             <a href="https://openlibrary.org/works/OL24319905W/William_Shakespeare?edition=key%3A/books/OL32183201M"
@@ -278,8 +300,7 @@
                 <!-- Narnia Card -->
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card h-100">
-                        <img src="./assets/images/narnia.jpg" class="card-img-top"
-                            alt="Narnia" height="175rem">
+                        <img src="./assets/images/narnia.jpg" class="card-img-top" alt="Narnia" height="175rem">
                         <div class="card-body d-flex flex-column">
                             <p class="card-title">Narnia</p>
                             <a href="https://openlibrary.org/works/OL71037W/The_Lion_the_Witch_and_the_Wardrobe?edition=key%3A/books/OL9243016M"
@@ -294,7 +315,7 @@
     <!-- End of Recommended Books Section -->
 
     <!-- Footer -->
-    <footer class="section border-top bg-light">
+    <footer class="section border-top" id="footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center my-5">
@@ -302,21 +323,22 @@
                         <a class="nav-link m-4" href="https://github.com/AoifeEdX/city-book-wings" target="_blank"><i
                                 class="fab fa-github"></i>
                             GitHub Repo</a>
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-facebook-f icon"></i> </a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fab fa-twitter icon"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fab fa-linkedin-in icon"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fab fa-google-plus-g icon"></i></a>
-                                </li>
-                            </ul>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-facebook-f icon"></i> </a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-twitter icon"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-linkedin-in icon"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-google-plus-g icon"></i></a>
+                        </li>
+                    </ul>
+                    <p>Made with <i class="fas fa-heart"></i> by Aoife, Daniel, Joe and Michael</p>
                     </p>
                 </div>
             </div>
@@ -326,7 +348,7 @@
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
+    <script src="./assets/slideshow.js"></script>
     <script src="./assets/js/loading.js"></script>
     <script src="./assets/js/flights.js"></script>
     <script src="./assets/js/books.js"></script>
