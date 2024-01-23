@@ -27,6 +27,11 @@ body.offcanvas-menu:before {
     visibility: visible;
 }
 
+.section-hero {
+    height: 100vh;
+    min-height: 670px;
+}
+
 .bg-primary {
     background-color: #1A374D !important;
 }
@@ -799,6 +804,7 @@ h4,
 .hero .slides {
     background: #ffffff;
     max-width: 800px;
+    max-height: 600px;
     left: -100px;
     z-index: 0;
     position: relative;
