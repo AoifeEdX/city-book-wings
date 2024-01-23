@@ -1,549 +1,320 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="author" content="Untree.co">
-	<meta name="description" content="">
-	<meta name="keywords" content="bootstrap, bootstrap4">
-	<title>CityBookWings</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CityBookWings</title>
 
-	<!-- Favicon -->
-	<link rel="shortcut icon" href="favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-	<!-- External Stylesheets -->
-	<link rel="stylesheet" href="path/to/font-icon-library/css/font-icon-library.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WygeQzIHDsegLVIxD5S7JbA8yQWrq8ah2g" crossorigin="anonymous">
-	<link
-		href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Serif+Pro:wght@400;700&display=swap"
-		rel="stylesheet">
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-	<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
-	<link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
-	<link rel="stylesheet" href="fonts/icomoon/style.css">
-	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-	<link rel="stylesheet" href="assets/css/daterangepicker.css">
-	<link rel="stylesheet" href="assets/css/aos.css">
-	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
+<body class="bg-white" style="overflow-x: hidden;">
 
-<body>
+    <header>
 
+        <img class="hero-img" src="./assets/images/holiday-globe.jpg"
+            style="height: 100vh;width: 100vw;	object-fit: cover;filter: brightness(0.5); position: fixed;	top: 0;	left: 0; z-index: -1;">
 
-	<div class="site-mobile-menu site-navbar-target">
-		<div class="site-mobile-menu-header">
-			<div class="site-mobile-menu-close">
-				<span class="icofont-close js-menu-toggle"></span>
-			</div>
-		</div>
-		<div class="site-mobile-menu-body"></div>
-	</div>
+        <!-- Nav -->
+        <nav class="navbar navbar-expand-lg navbar-dark py-5 sticky" id="navbar">
+            <div class="container" id="stickynav" >
+                <a class="navbar-brand fs-3" href="/">CITY<span class="fw-normal text-warning">BOOK</span>WINGS</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu"
+                    aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="navbar-nav ms-auto fs-5">
+                        <li class="nav-item ms-4"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item ms-4"><a class="nav-link" href="#flights">Flights</a></li>
+                        <li class="nav-item ms-4"><a class="nav-link" href="#books">Books</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- End of Nav -->
 
-	<nav class="site-nav">
-		<div class="container">
-			<div class="site-navigation">
-				<a href="index.html" class="logo m-0">CityBookWings <span class="text-primary">.</span></a>
+        <!-- Hero Section -->
+        <section id="hero" style="min-height: 600px;">
+            <div class="container">
+                <div class="row">
+                    <!-- Left column -->
+                    <div class="col-md-6 my-5 d-flex align-items-center">
+                        <p class="display-6 text-white my-3">Get <span class="fw-normal text-warning">flight
+                                information</span> and
+                            <span class="fw-normal text-warning">book recommendations</span> for your
+                            ideal&nbsp;holiday.
+                        </p>
+                    </div>
+                    <!-- Right column -->
+                    <div class="col-md-6 my-5">
+                        <!-- Form -->
+                        <form class="bg-light p-5">
+                            <div class="form-group">
 
-				<ul class="js-clone-nav d-none d-lg-inline-block text-left site-menu float-right">
-					<li class="active"><a href="index.html">Home</a></li>
-					<li><a href="#recommendedbooks-section">Books</a></li>
-					<li><a href="#aboutcitybooks">About</a></li>
-					<li><a href="#contactcitybooks">Contact Us</a></li>
-				</ul>
+                                <div class="row">
+                                    <div class="col-md">
+                                        <div class="form-group">
+                                            <label for="locationFrom" class="mb-3 fs-5">From</label>
+                                            <input type="text" class="form-control mb-5" id="locationFrom"
+                                                placeholder="City, Country" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md">
+                                        <div class="form-group">
+                                            <label for="locationTo" class="mb-3 fs-5">To</label>
+                                            <input type="text" class="form-control mb-5" id="locationTo"
+                                                placeholder="City, Country" required>
+                                        </div>
+                                    </div>
+                                </div>
 
-				<a href="#"
-					class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none light"
-					data-toggle="collapse" data-target="#main-navbar">
-					<span></span>
-				</a>
+                                <div class="row">
+                                    <div class="col-md">
+                                        <div class="form-group">
+                                            <label for="departureDate" class="mb-3 fs-5">Departure Date</label>
+                                            <div class="date-wrap">
+                                                <input type="date" id="departureDate" class="form-control  mb-3"
+                                                    required>
+                                            </div>
+                                        </div>
+                                    </div>
 
-			</div>
-		</div>
-	</nav>
+                                    <div class="col-md">
+                                        <div class="form-group d-flex flex-column">
+                                            <label for="search-button" class="mb-3 text-light fs-5 d-block"> ` </label>
+                                            <a href="#loading" class="btn btn-warning btn-block  mb-3" type="submit"
+                                                onclick="loadingIcon(); getFlights(); getBooks();"><i
+                                                    class="fas fa-search"></i> Search</a>
+                                        </div>
+                                    </div>
+                                </div>
+                        </form>
+                        <!-- End of Form -->
 
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End of Hero Section -->
+    </header>
 
-	<div class="hero">
-		<div class="container">
-			<div class="row align-items-center">
-				<div class="col-lg-7">
-					<div class="intro-wrap">
-						<h1 class="mb-5"><span class="d-block">Choose your dream holiday</span> trip in <span
-								class="typed-words"></span></h1>
+    <!-- Results from APIS Section -->
+    <div id="results" class="bg-light">
+        <div class="container">
 
-						<div class="row">
-							<div class="col-12">
-								<form class="form">
-									<div class="row mb-2">
-										<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
-											<div class="form-group">
-												<input type="text" class="form-control mb-5" id="locationFrom"
-													placeholder="Fly From - London" required>
-											</div>
-										</div>
-										<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
-											<div class="form-group">
-												<input type="text" class="form-control mb-5" id="locationTo"
-													placeholder="Fly To - Japan" required>
-											</div>
-										</div>
-										<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-5">
-											<input type="date" class="form-control" name="daterange">
-										</div>
-									</div>
-									<div class="row align-items-center">
-										<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
-											<input type="submit" class="btn btn-primary btn-block" value="Search" id="search-btn">
-										</div>
-										<div class="col-lg-8">
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-5">
-					<div class="slides">
-						<img src="assets/images/holiday-view.jpg" alt="Image" class="img-fluid active">
-						<img src="assets/images/holiday-globe.jpg" alt="Image" class="img-fluid">
-						<img src="assets/images/holiday-plane.jpg" alt="Image" class="img-fluid">
-						<img src="assets/images/holiday-motor.jpg" alt="Image" class="img-fluid">
-						<img src="assets/images/holiday-palms.jpg" alt="Image" class="img-fluid">
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-	<div class="untree_co-section">
-		<div class="container">
-			<div class="row mb-5 justify-content-center">
-				<div class="col-lg-6 text-center">
-					<h2 class="section-title text-center mb-3" id="aboutcitybooks">About CityBookWings</h2>
-					<p>Travelling? Reading? We've got you covered. We have developed this website for all those who love
-						travelling and reading. We believe that for every great destination, there is a great book out
-						there. Why wait, book your holiday now and find a new favourite book.</p>
-				</div>
-			</div>
-			<div class="row align-items-stretch">
-				<div class="col-lg-4 order-lg-1">
-					<div class="h-100">
-						<div class="frame h-100">
-							<div class="feature-img-bg h-100"
-								style="background-image: url('assets/images/statue-of-liberty.jpg');"></div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-6 col-sm-6 col-lg-4 feature-1-wrap d-md-flex flex-md-column order-lg-1">
-
-					<div class="feature-1 d-md-flex">
-						<div class="align-self-center">
-							<span class="flaticon-house display-4 text-primary"></span>
-							<h3>Great Prices</h3>
-							<p class="mb-0">We are proud to say that we also offer the best prices on the market, so
-								there is no point in looking somewhere else. So let's start planning your holiday.</p>
-						</div>
-					</div>
-
-					<div class="feature-1 ">
-						<div class="align-self-center">
-							<span class="flaticon-restaurant display-4 text-primary"></span>
-							<h3>Beautiful Destinations</h3>
-							<p class="mb-0">Wether you want to fly to the Maldives, Dubai or Hawaii we have worldwide
-								destinations for you so there is no place in the world where we do not have holidays
-								for.</p>
-						</div>
-					</div>
-
-				</div>
-
-				<div class="col-6 col-sm-6 col-lg-4 feature-1-wrap d-md-flex flex-md-column order-lg-3">
-
-					<div class="feature-1 d-md-flex">
-						<div class="align-self-center">
-							<span class="flaticon-mail display-4 text-primary"></span>
-							<h3>Easy to Connect</h3>
-							<p class="mb-0">Our website is easy to use and gives you the best prices out there, making
-								us a top choice for holiday bookings.</p>
-						</div>
-					</div>
-
-					<div class="feature-1 d-md-flex">
-						<div class="align-self-center">
-							<span class="flaticon-phone-call display-4 text-primary"></span>
-							<h3>24/7 Support</h3>
-							<p class="mb-0">Got any questions? Do not hesitate to contact us for any queries that you
-								might have.</p>
-						</div>
-					</div>
-
-				</div>
-
-			</div>
-		</div>
-	</div>
-
-	<div class="untree_co-sectiono recommendedbooks-section mt-5" id="recommendedbooks-section">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-7 text-center">
-					<h2 class="section-title text-center mb-5">Book Recommendations</h2>
-
-					<div class="owl-single owl-carousel no-nav">
-						<div class="testimonial mx-auto">
-							<figure class="img-wrap">
-								<img src="images/person_2.jpg" alt="Image" class="img-fluid">
-							</figure>
-							<h3 class="name">Adam Aderson</h3>
-							<blockquote>
-								<p>&ldquo;There live the blind texts. Separated they live in Bookmarksgrove right at the
-									coast of the Semantics, a large language ocean.&rdquo;</p>
-							</blockquote>
-						</div>
-
-						<div class="testimonial mx-auto">
-							<figure class="img-wrap">
-								<img src="images/person_3.jpg" alt="Image" class="img-fluid">
-							</figure>
-							<h3 class="name">Lukas Devlin</h3>
-							<blockquote>
-								<p>&ldquo;There live the blind texts. Separated they live in Bookmarksgrove right at the
-									coast of the Semantics, a large language ocean.&rdquo;</p>
-							</blockquote>
-						</div>
-
-						<div class="testimonial mx-auto">
-							<figure class="img-wrap">
-								<img src="images/person_4.jpg" alt="Image" class="img-fluid">
-							</figure>
-							<h3 class="name">Kayla Bryant</h3>
-							<blockquote>
-								<p>&ldquo;There live the blind texts. Separated they live in Bookmarksgrove right at the
-									coast of the Semantics, a large language ocean.&rdquo;</p>
-							</blockquote>
-						</div>
-
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</div>
+            <!-- Loading Section -->
+            <section id="loading" class="d-none text-center text-danger p-5 bg-light">
+                <div class="spinner-border text-center text-danger" role="status">
+                </div>
+                <p class="fs-4 text-center text-danger">Searching flights and books</p>
+            </section>
+            <!-- End of Loading Section -->
 
 
-	<div class="untree_co-section">
-		<div class="container">
-			<div class="row justify-content-center text-center mb-5">
-				<div class="col-lg-6">
-					<h2 class="section-title text-center mb-3">Special Offers &amp; Discounts</h2>
-					<p>Check out our best prices for this season. We handpick every destination and we make sure we are
-						with you from the moment of booking the trip until you land in your dream land (sorry, we got
-						carried away here).</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-					<div class="media-1">
-						<a href="#" class="d-block mb-3"><img src="assets/images/colosseum.jpg" alt="Image"
-								class="img-fluid"></a>
-						<span class="d-flex align-items-center loc mb-2">
-							<span class="icon-room mr-3"></span>
-							<span>Italy</span>
-						</span>
-						<div class="d-flex align-items-center">
-							<div>
-								<h3><a href="#">Colosseum</a></h3>
-								<div class="price ml-auto">
-									<span>£520.00</span>
-								</div>
-							</div>
+            <!-- Flight Search Results Section -->
+            <section>
+                <div id="flightResults" class="pb-5">
 
-						</div>
+                    <!-- Flight results will be displayed here -->
 
-					</div>
-				</div>
-				<div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-					<div class="media-1">
-						<a href="#" class="d-block mb-3"><img src="assets/images/londoneye.jpg" alt="Image"
-								class="img-fluid"></a>
-						<span class="d-flex align-items-center loc mb-2">
-							<span class="icon-room mr-3"></span>
-							<span>England</span>
-						</span>
-						<div class="d-flex align-items-center">
-							<div>
-								<h3><a href="#">London Eye</a></h3>
-								<div class="price ml-auto">
-									<span>£425</span>
-								</div>
-							</div>
+                </div>
+            </section>
+            <!-- End of Flight Search Results Section-->
 
-						</div>
+            <!-- Book Search Results Section -->
+            <section>
+                <div id="bookResults" class="pb-5">
 
-					</div>
-				</div>
-				<div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-					<div class="media-1">
-						<a href="#" class="d-block mb-3"><img src="assets/images/macchupichu2.jpg" alt="Image"
-								class="img-fluid"></a>
-						<span class="d-flex align-items-center loc mb-2">
-							<span class="icon-room mr-3"></span>
-							<span>Peru</span>
-						</span>
-						<div class="d-flex align-items-center">
-							<div>
-								<h3><a href="#">Machu Picchu </a></h3>
-								<div class="price ml-auto">
-									<span>£750.00</span>
-								</div>
-							</div>
+                    <!-- Book results will be displayed here -->
 
-						</div>
+                </div>
+            </section>
+            <!-- End of Book Search Results Section -->
 
-					</div>
-				</div>
-				<div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-					<div class="media-1">
-						<a href="#" class="d-block mb-3"><img src="assets/images/christtheredeemer.jpg" alt="Image"
-								class="img-fluid"></a>
+        </div>
+    </div>
+    <!-- End of Results from APIS Section -->
 
-						<span class="d-flex align-items-center loc mb-2">
-							<span class="icon-room mr-3"></span>
-							<span>Brazil</span>
-						</span>
+    <!-- About Section -->
+    <section id="about" class="bg-white border">
+        <div class="container p-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 info-left p-3">
+                    <img class="img-fluid" src="./assets/images/holiday-bus.jpg" alt="Japanese city and book">
+                </div>
+                <div class="col-lg-6 info-right p-5">
+                    <h1 class="my-5">What is <strong>CityBookWings</strong>?</h1>
+                    <h5 class="my-4">
+                        <strong>CityBookWings</strong> provides flight information for any city you'd like to travel
+                        to, and recommends books about that city that you might like to read.
+                    </h5>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6 info-left p-5">
+                    <h1 class="my-5">Make your trip memorable</h1>
+                    <h5 class="my-4">
+                        Whether you're planning a trip or simply interested in books about a specific location,
+                        <strong>CityBookWings</strong> has you covered.
+                    </h5>
+                </div>
+                <div class="col-lg-6 info-right p-3">
+                    <img class="img-fluid" src="./assets/images/holidaybags.jpg" alt="UK city and book">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of About Section -->
 
-						<div class="d-flex align-items-center">
-							<div>
-								<h3><a href="#">Christ The Redeemer</a></h3>
-								<div class="price ml-auto">
-									<span>£670.00</span>
-								</div>
-							</div>
+    <!-- Recommended Cities Section -->
+    <section id="flights" class="p-5 bg-light border">
+        <h3 class="mb-5 text-center">Recommended Cities:</h3>
+        <div class="container mt-5">
+            <div class="row">
 
-						</div>
+                <!-- Shanghai Card -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card">
+                        <img src="./assets/images/flight-china.png" class="card-img-top" alt="Shanghai Image">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Shanghai, China</h5>
+                            <p class="card-text">Flights from £500</p>
+                            <a href="#" class="btn btn-warning mt-auto">Book Now</a>
+                        </div>
+                    </div>
+                </div>
 
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                <!-- New York Card -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card">
+                        <img src="./assets/images/flight-usa.png" class="card-img-top" alt="New York Image">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">New York, USA</h5>
+                            <p class="card-text">Flights from £500</p>
+                            <a href="#" class="btn btn-warning mt-auto">Book Now</a>
+                        </div>
+                    </div>
+                </div>
 
-	<div class="untree_co-section">
-		<div class="container">
-			<div class="row justify-content-between align-items-center">
+                <!-- Mumbai Card -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card">
+                        <img src="./assets/images/flight-india.png" class="card-img-top" alt="Mumbai Image">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Mumbai, India</h5>
+                            <p class="card-text">Flights from £500</p>
+                            <a href="#" class="btn btn-warning mt-auto">Book Now</a>
+                        </div>
+                    </div>
+                </div>
 
-				<div class="col-lg-6">
-					<figure class="img-play-video">
-						<a id="play-video" class="video-play-button"
-							href=https://youtu.be/wXcBGfXXL4w?si=-ZGglC_5-LT27MIS" data-fancybox>
-							<span></span>
-						</a>
-						<img src="assets/images/switzerland.jpg" alt="Image" class="img-fluid rounded-20">
-					</figure>
-				</div>
+                <!-- Lagos Card -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card">
+                        <img src="./assets/images/flight-nigeria.png" class="card-img-top" alt="Lagos Image">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Lagos, Nigeria</h5>
+                            <p class="card-text">Flights from £500</p>
+                            <a href="#" class="btn btn-warning mt-auto">Book Now</a>
+                        </div>
+                    </div>
+                </div>
 
-				<div class="col-lg-5">
-					<h2 class="section-title text-left mb-4">Take a look at CityBookWings Video</h2>
-					<p>Sit back and relax. Let us deal with the complicated stuff. All you have to do is just pack your
-						bags, get a starbie, get in the car and hop in the plane towards your dream destination. Why
-						wait, book now.</p>
+            </div>
+        </div>
+    </section>
+    <!-- End of Recommended Cities Section -->
 
-					<ul class="list-unstyled two-col clearfix">
-						<li>Outdoor recreation activities</li>
-						<li>Airlines</li>
-						<li>Car Rentals</li>
-						<li>Cruise Lines</li>
-						<li>Hotels</li>
-						<li>Railways</li>
-						<li>Travel Insurance</li>
-						<li>Package Tours</li>
-						<li>Insurance</li>
-						<li>Guide Books</li>
-					</ul>
+    <!-- Recommended Books Section -->
+    <section id="books" class="p-5 bg-white border">
+        <h3 class="mb-5 text-center">Recommended Books:</h3>
+        <div class="container mt-5">
+            <div class="row">
 
-					<p><a href="#" class="btn btn-primary">Get Started</a></p>
+                <!-- South Korea Card -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100">
+                        <img src="./assets/images/book_mermaid_from_jeju.png" class="card-img-top"
+                            alt="The_Mermaid_from_Jeju Book Cover">
+                        <div class="card-body d-flex flex-column">
+                            <p class="card-title">The Mermaid from Jeju</p>
+                            <a href="https://openlibrary.org/books/OL30917787M/The_Mermaid_from_Jeju"
+                                class="btn btn-warning mt-auto" target="_blank">Read Now</a>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Japan Card -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100">
+                        <img src="./assets/images/book_tokyo_ueno_station.png" class="card-img-top"
+                            alt="Tokyo_Ueno_Station Book Cover">
+                        <div class="card-body d-flex flex-column">
+                            <p class="card-title">Tokyo Ueno Station</p>
+                            <a href="https://openlibrary.org/works/OL21177270W/Tokyo_Ueno_Station"
+                                class="btn btn-warning mt-auto" target="_blank">Read Now</a>
+                        </div>
+                    </div>
+                </div>
 
-				</div>
-			</div>
-		</div>
-	</div>
+                <!-- USA Card -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100">
+                        <img src="./assets/images/book_last_train_to_memphis.png" class="card-img-top"
+                            alt="Last_Train_to_Memphis Book Cover">
+                        <div class="card-body d-flex flex-column">
+                            <p class="card-title">Last Train to Memphis</p>
+                            <a href="https://openlibrary.org/works/OL1909616W/Last_Train_to_Memphis"
+                                class="btn btn-warning mt-auto" target="_blank">Read Now</a>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Italy Card -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100">
+                        <img src="./assets/images/book_midnight_in_sicily.png" class="card-img-top"
+                            alt="Midnight_in_Sicily Book Cover">
+                        <div class="card-body d-flex flex-column">
+                            <p class="card-title">Midnight in Sicily</p>
+                            <a href="https://openlibrary.org/works/OL1968482W/Midnight_in_Sicily"
+                                class="btn btn-warning mt-auto" target="_blank">Read Now</a>
+                        </div>
+                    </div>
+                </div>
 
+            </div>
+        </div>
+    </section>
+    <!-- End of Recommended Books Section -->
 
-	<div class="py-5 cta-section">
-		<div class="container">
-			<div class="row text-center">
-				<div class="col-md-12">
-					<h2 class="mb-2 text-white">Lets you Explore the Best. Contact Us Now</h2>
-				</div>
-			</div>
-		</div>
-	</div>
+    <!-- Footer -->
+    <footer class="section border-top bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center my-5">
+                    <p>&copy; 2024 CityBookWings<br>
+                        <a class="nav-link m-4" href="https://github.com/AoifeEdX/city-book-wings" target="_blank"><i
+                                class="fab fa-github"></i>
+                            GitHub Repo</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End of Footer -->
 
-	<div class="site-footer">
-		<div class="inner first">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6 col-lg-4">
-						<div class="widget">
-							<h3 class="heading"><a href="#aboutcitybooks">About CityBookWings</a></h3>
-							<p>We believe that for every great destination, there is a great book.</p>
-						</div>
-						<div class="widget">
-							<ul class="list-unstyled social">
-								<li><a href="#"><span class="icon-twitter"></span></a></li>
-								<li><a href="#"><span class="icon-instagram"></span></a></li>
-								<li><a href="#"><span class="icon-facebook"></span></a></li>
-								<li><a href="#"><span class="icon-linkedin"></span></a></li>
-								<li><a href="#"><span class="icon-dribbble"></span></a></li>
-								<li><a href="#"><span class="icon-pinterest"></span></a></li>
-								<li><a href="#"><span class="icon-apple"></span></a></li>
-								<li><a href="#"><span class="icon-google"></span></a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-2">
-						<div class="widget">
-							<h3 class="heading"><a href="#recommendedbooks-section">Books</a></h3>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-							<ul class="links list-unstyled">
-								<li><a href="#flights">Flights</a></li>
-								<li><a href="#aboutcitybooks">About</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-4">
-						<div class="widget">
-							<h3 class="heading" id="contactcitybooks">Contact</h3>
-							<ul class="list-unstyled quick-info links">
-								<li class="email"><a href="#">donotemailus@noemail.com</a></li>
-								<li class="phone"><a href="#">+1 222 212 3819</a></li>
-								<li class="address">You can find us online - Tuesday-Thursday from 6:30pm
-										until 9:30pm and Friday from 6pm until 8pm at the edX Bootcamp</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+    <script src="./assets/js/loading.js"></script>
+    <script src="./assets/js/flights.js"></script>
+    <script src="./assets/js/books.js"></script>
 
-
-
-		<div class="inner dark">
-			<div class="container">
-				<div class="row text-center">
-					<div class="col-md-8 mb-3 mb-md-0 mx-auto">
-						<p>Copyright &copy;
-							<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash;
-							Designed with love by Aoife, Daniel, Michael and Joe.
-						</p>
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</div>
-	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-	<script src="assets/js/jquery-3.4.1.min.js"></script>
-	<!-- Waypoints -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
-	<!-- Bootstrap JS and dependencies (Popper.js) -->
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
-		integrity="sha384-7Bh9TQI+PztfS7/2D8KtSdWP8WahR6boEh1x0otlGnCC5BdU5tq5cz2tuKO23vvL"
-		crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WygeQzIHDsegLVIxD5S7JbA8yQWrq8ah2g"
-		crossorigin="anonymous"></script>
-	<!-- Other scripts -->
-	<script src="assets/js/popper.min.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/js/owl.carousel.min.js"></script>
-	<script src="assets/js/jquery.animateNumber.min.js"></script>
-	<script src="assets/js/jquery.fancybox.min.js"></script>
-	<script src="assets/js/aos.js"></script>
-	<script src="assets/js/moment.min.js"></script>
-	<script src="assets/js/daterangepicker.js"></script>
-	<script src="assets/js/typed.js"></script>
-
-	<script>
-		(function (d) {
-			var r = function (b) { return b.split("").reverse().join("") }, m = {
-				numberStep: function (b, a) {
-					var e = Math.floor(b);
-					d(a.elem).text(e)
-				}
-			}, g = function (b) {
-				var a = b.elem;
-				a.nodeType && a.parentNode && (a = a._animateNumberSetter, a || (a = m.numberStep), a(b.now, b))
-			};
-			d.Tween && d.Tween.propHooks ? d.Tween.propHooks.number = { set: g } : d.fx.step.number = g;
-			d.animateNumber = {
-				numberStepFactories: {
-					append: function (b) {
-						return function (a, e) {
-							var f = Math.floor(a);
-							d(e.elem).prop("number", a).text(f + b)
-						}
-					}, separator: function (b, a, e) {
-						b = b || " ";
-						a = a || 3;
-						e = e || "";
-						return function (f, k) {
-							var u = 0 > f, c = Math.floor((u ? -1 : 1) * f).toString(), n = d(k.elem);
-							if (c.length > a) {
-								for (var h = c, l = a, m = h.split("").reverse(), c = [], p, s, q, t = 0, g = Math.ceil(h.length / l); t < g; t++) {
-									p = "";
-									for (q = 0; q < l; q++) {
-										s = t * l + q;
-										if (s === h.length) break;
-										p += m[s]
-									}
-									c.push(p)
-								}
-								h = c.length - 1;
-								l = r(c[h]);
-								c[h] = r(parseInt(l, 10).toString());
-								c = c.join(b);
-								c = r(c)
-							}
-							n.prop("number", f).text((u ? "-" : "") + c + e)
-						}
-					}
-				}
-			};
-			d.fn.animateNumber = function () {
-				for (var b = arguments[0], a = d.extend({}, m, b), e = d(this), f = [a], k = 1, g = arguments.length; k < g; k++) f.push(arguments[k]);
-				if (b.numberStep) {
-					var c = this.each(function () {
-						this._animateNumberSetter = b.numberStep
-					}), n = a.complete;
-					a.complete = function () {
-						c.each(function () {
-							delete this._animateNumberSetter
-						});
-						n && n.apply(this, arguments)
-					}
-				}
-				return e.animate.apply(e, f)
-			}
-		})(jQuery);
-
-		// Use the plugin on the specified element
-		$('.animatedNumber').animateNumber({
-			number: 1000,
-			numberStep: function (now, tween) {
-				var target = $(tween.elem);
-				target.prop('number', now).text(Math.floor(now));
-			}
-		});
-	</script>
 
 </body>
 
