@@ -146,6 +146,42 @@ ul li:nth-child(4) a:before {
     background: #dd4b39;
 }
 
+/* Add this to your existing CSS or create a new stylesheet */
+
+.no-style {
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    text-align: left;
+    line-height: normal;
+    font-size: inherit;
+    margin: 0;
+    display: inline;
+    border-radius: 0;
+    position: static;
+    overflow: visible;
+    border: none;
+}
+
+.no-style .icon {
+    color: inherit;
+    transform: none;
+}
+
+.no-style:before {
+    content: "";
+    position: static;
+    top: auto;
+    left: auto;
+    width: auto;
+    height: auto;
+    background: none;
+}
+
+.no-style:hover:before {
+    top: auto;
+}
+
 #footer {
     background-color: gold;
 }
