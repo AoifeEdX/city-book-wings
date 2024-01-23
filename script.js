@@ -1,19 +1,18 @@
 const cityName = document.getElementById("searchBook").value;
 
 function getbooks() {
-  const queryURL = `http://openlibrary.org/search.json?subject=${cityName}`
+    const queryURL = `http://openlibrary.org/search.json?subject=${cityName}`;
 
-// parse in city under 'subject' parameter
-  fetch(queryURL)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-    });
+    // parse in city under 'subject' parameter
+    fetch(queryURL)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+        });
 }
 getbooks();
-
 
 // bookSubject()
 //a form input that allows the user to input a subject(city)
