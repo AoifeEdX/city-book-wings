@@ -22,6 +22,7 @@ body:before {
     transition: .3s all ease;
 }
 
+
 body.offcanvas-menu:before {
     opacity: 1;
     visibility: visible;
@@ -1364,7 +1365,7 @@ h4,
     margin-top: 25px;
 }
 
-.testimonial-section {
+.recommendedbooks-section {
     background: #f8f9fa;
     padding-top: 5rem !important;
     padding-bottom: 7rem !important;

@@ -50,9 +50,9 @@
 
 				<ul class="js-clone-nav d-none d-lg-inline-block text-left site-menu float-right">
 					<li class="active"><a href="index.html">Home</a></li>
-					<li><a href="services.html">Books</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="contact.html">Contact Us</a></li>
+					<li><a href="#recommendedbooks-section">Books</a></li>
+					<li><a href="#aboutcitybooks">About</a></li>
+					<li><a href="#contactcitybooks">Contact Us</a></li>
 				</ul>
 
 				<a href="#"
@@ -79,22 +79,15 @@
 								<form class="form">
 									<div class="row mb-2">
 										<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
-											<select name="" id="" class="form-control custom-select">
-												<option value="">Destination</option>
-												<option value="">Peru</option>
-												<option value="">Japan</option>
-												<option value="">Thailand</option>
-												<option value="">Brazil</option>
-												<option value="">United States</option>
-												<option value="">Israel</option>
-												<option value="">China</option>
-												<option value="">Russia</option>
-											</select>
+											<div class="form-group">
+												<input type="text" class="form-control mb-5" id="locationFrom"
+													placeholder="Fly From - London" required>
+											</div>
 										</div>
 										<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
 											<div class="form-group">
 												<input type="text" class="form-control mb-5" id="locationTo"
-													placeholder="City, Country" required>
+													placeholder="Fly To - Japan" required>
 											</div>
 										</div>
 										<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-5">
@@ -103,7 +96,7 @@
 									</div>
 									<div class="row align-items-center">
 										<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
-											<input type="submit" class="btn btn-primary btn-block" value="Search">
+											<input type="submit" class="btn btn-primary btn-block" value="Search" id="search-btn">
 										</div>
 										<div class="col-lg-8">
 										</div>
@@ -131,10 +124,10 @@
 		<div class="container">
 			<div class="row mb-5 justify-content-center">
 				<div class="col-lg-6 text-center">
-					<h2 class="section-title text-center mb-3">Our Services</h2>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there
-						live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics,
-						a large language ocean.</p>
+					<h2 class="section-title text-center mb-3" id="aboutcitybooks">About CityBookWings</h2>
+					<p>Travelling? Reading? We've got you covered. We have developed this website for all those who love
+						travelling and reading. We believe that for every great destination, there is a great book out
+						there. Why wait, book your holiday now and find a new favourite book.</p>
 				</div>
 			</div>
 			<div class="row align-items-stretch">
@@ -152,16 +145,19 @@
 					<div class="feature-1 d-md-flex">
 						<div class="align-self-center">
 							<span class="flaticon-house display-4 text-primary"></span>
-							<h3>Beautiful Condo</h3>
-							<p class="mb-0">Even the all-powerful Pointing has no control about the blind texts.</p>
+							<h3>Great Prices</h3>
+							<p class="mb-0">We are proud to say that we also offer the best prices on the market, so
+								there is no point in looking somewhere else. So let's start planning your holiday.</p>
 						</div>
 					</div>
 
 					<div class="feature-1 ">
 						<div class="align-self-center">
 							<span class="flaticon-restaurant display-4 text-primary"></span>
-							<h3>Restaurants & Cafe</h3>
-							<p class="mb-0">Even the all-powerful Pointing has no control about the blind texts.</p>
+							<h3>Beautiful Destinations</h3>
+							<p class="mb-0">Wether you want to fly to the Maldives, Dubai or Hawaii we have worldwide
+								destinations for you so there is no place in the world where we do not have holidays
+								for.</p>
 						</div>
 					</div>
 
@@ -173,7 +169,8 @@
 						<div class="align-self-center">
 							<span class="flaticon-mail display-4 text-primary"></span>
 							<h3>Easy to Connect</h3>
-							<p class="mb-0">Even the all-powerful Pointing has no control about the blind texts.</p>
+							<p class="mb-0">Our website is easy to use and gives you the best prices out there, making
+								us a top choice for holiday bookings.</p>
 						</div>
 					</div>
 
@@ -181,7 +178,8 @@
 						<div class="align-self-center">
 							<span class="flaticon-phone-call display-4 text-primary"></span>
 							<h3>24/7 Support</h3>
-							<p class="mb-0">Even the all-powerful Pointing has no control about the blind texts.</p>
+							<p class="mb-0">Got any questions? Do not hesitate to contact us for any queries that you
+								might have.</p>
 						</div>
 					</div>
 
@@ -230,11 +228,11 @@
 		</div>
 	</div>
 
-	<div class="untree_co-section testimonial-section mt-5">
+	<div class="untree_co-sectiono recommendedbooks-section mt-5" id="recommendedbooks-section">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-lg-7 text-center">
-					<h2 class="section-title text-center mb-5">Book Reccomendations</h2>
+					<h2 class="section-title text-center mb-5">Book Recommendations</h2>
 
 					<div class="owl-single owl-carousel no-nav">
 						<div class="testimonial mx-auto">
@@ -283,7 +281,9 @@
 			<div class="row justify-content-center text-center mb-5">
 				<div class="col-lg-6">
 					<h2 class="section-title text-center mb-3">Special Offers &amp; Discounts</h2>
-					<p>Check out our best prices for this season. We handpick every destination and we make sure we are with you from the moment of booking the trip until you land in your dream land (sorry, we got carried away here).</p>
+					<p>Check out our best prices for this season. We handpick every destination and we make sure we are
+						with you from the moment of booking the trip until you land in your dream land (sorry, we got
+						carried away here).</p>
 				</div>
 			</div>
 			<div class="row">
@@ -389,7 +389,9 @@
 
 				<div class="col-lg-5">
 					<h2 class="section-title text-left mb-4">Take a look at CityBookWings Video</h2>
-					<p>Sit back and relax. Let us deal with the complicated stuff. All you have to do is just pack your bags, get a starbie, get in the car and hop in the plane towards your dream destination. Why wait, book now.</p>
+					<p>Sit back and relax. Let us deal with the complicated stuff. All you have to do is just pack your
+						bags, get a starbie, get in the car and hop in the plane towards your dream destination. Why
+						wait, book now.</p>
 
 					<ul class="list-unstyled two-col clearfix">
 						<li>Outdoor recreation activities</li>
@@ -419,8 +421,6 @@
 			<div class="row text-center">
 				<div class="col-md-12">
 					<h2 class="mb-2 text-white">Lets you Explore the Best. Contact Us Now</h2>
-					<p class="mb-0"><a href="booking.html"
-							class="btn btn-outline-white text-white btn-md font-weight-bold">Get in touch</a></p>
 				</div>
 			</div>
 		</div>
@@ -432,7 +432,7 @@
 				<div class="row">
 					<div class="col-md-6 col-lg-4">
 						<div class="widget">
-							<h3 class="heading">About CityBookWings</h3>
+							<h3 class="heading"><a href="#aboutcitybooks">About CityBookWings</a></h3>
 							<p>We believe that for every great destination, there is a great book.</p>
 						</div>
 						<div class="widget">
@@ -450,22 +450,22 @@
 					</div>
 					<div class="col-md-6 col-lg-2">
 						<div class="widget">
-							<h3 class="heading">Books</h3>
+							<h3 class="heading"><a href="#recommendedbooks-section">Books</a></h3>
+
 							<ul class="links list-unstyled">
 								<li><a href="#flights">Flights</a></li>
-								<li><a href="#about">About</a></li>
-								<li><a href="contact">Contact</a></li>
+								<li><a href="#aboutcitybooks">About</a></li>
 							</ul>
 						</div>
 					</div>
 					<div class="col-md-6 col-lg-4">
 						<div class="widget">
-							<h3 class="heading">Contact</h3>
+							<h3 class="heading" id="contactcitybooks">Contact</h3>
 							<ul class="list-unstyled quick-info links">
 								<li class="email"><a href="#">donotemailus@noemail.com</a></li>
 								<li class="phone"><a href="#">+1 222 212 3819</a></li>
-								<li class="address"><a href="#">You can find us online - Tuesday-Thursday from 6:30pm
-										until 9:30pm and Friday from 6pm until 8pm at the edX Bootcamp</a></li>
+								<li class="address">You can find us online - Tuesday-Thursday from 6:30pm
+										until 9:30pm and Friday from 6pm until 8pm at the edX Bootcamp</li>
 							</ul>
 						</div>
 					</div>
