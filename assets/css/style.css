@@ -28,8 +28,7 @@ body {
     box-shadow: inset 0 100px 0 0 #f09e29;
 }
 
-
-/*Slideshow for pictures*/
+/*slideshow*/
 
 .slideshow-container {
     position: relative;
@@ -39,39 +38,27 @@ body {
 }
 
 .mySlides {
-    display: none;
-    animation: fade 3s ease-in-out;
-    /* Adjust the duration and easing as needed */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    height: 50%;
+    /* Adjust the height as needed */
+    object-fit: cover;
 }
-
-img {
-    width: 40%;
-}
-
-@keyframes fade {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-/* Slideshow for text */
 
 .slideshow-text-container {
-    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .mySlidesText {
-    display: none;
     opacity: 0;
-    transition: opacity 3s ease-in-out;
+    transition: opacity 1s ease-in-out;
 }
 
+.mySlides.show,
 .mySlidesText.show {
-    display: block;
     opacity: 1;
 }
 
@@ -146,7 +133,6 @@ ul li:nth-child(4) a:before {
     background: #dd4b39;
 }
 
-/* Add this to your existing CSS or create a new stylesheet */
 
 .no-style {
     width: auto;
