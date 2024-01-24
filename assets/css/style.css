@@ -176,6 +176,14 @@ ul li:nth-child(4) a:before {
     top: auto;
 }
 
+.card-img-top-book{
+    height: 15rem;
+}
+
+.card-img-top{
+    height: 15rem;
+}
+
 #footer {
     background-color: gold;
 }
