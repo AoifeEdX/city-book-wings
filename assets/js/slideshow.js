@@ -17,7 +17,7 @@ function showSlides() {
     imageSlides[slideIndex - 1].style.display = "block";
     textSlides[slideIndex - 1].style.display = "block";
 
-    setTimeout(showSlides, 5000); // Change slide every 5 seconds (adjust as needed)
+    setTimeout(showSlides, 10000);
 }
 
 document.addEventListener("DOMContentLoaded", function () {

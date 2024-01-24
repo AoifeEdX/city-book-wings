@@ -30,7 +30,6 @@ body {
 
 /*slideshow*/
 
-/* Add this to your existing CSS or create a new stylesheet */
 
 .slideshow-container {
     display: block;
@@ -44,12 +43,12 @@ body {
     display: none;
     opacity: 0;
     transition: opacity 1s ease-in-out;
-    /* Adjust the duration and easing as needed */
+
 }
 
 .mySlides img {
     width: 45%;
-    /* Adjust as needed */
+
 }
 
 .mySlides.active {
@@ -61,7 +60,6 @@ body {
     display: none;
     opacity: 0;
     transition: opacity 1s ease-in-out;
-    /* Adjust the duration and easing as needed */
 }
 
 .mySlides.active,
