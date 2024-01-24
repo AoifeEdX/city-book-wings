@@ -30,7 +30,10 @@ body {
 
 /*slideshow*/
 
+/* Add this to your existing CSS or create a new stylesheet */
+
 .slideshow-container {
+    display: block;
     position: relative;
     max-width: 100%;
     margin: auto;
@@ -38,27 +41,32 @@ body {
 }
 
 .mySlides {
+    display: none;
     opacity: 0;
     transition: opacity 1s ease-in-out;
-    height: 50%;
-    /* Adjust the height as needed */
-    object-fit: cover;
+    /* Adjust the duration and easing as needed */
 }
 
-.slideshow-text-container {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.mySlides img {
+    width: 45%;
+    /* Adjust as needed */
+}
+
+.mySlides.active {
+    display: block;
+    opacity: 1;
 }
 
 .mySlidesText {
+    display: none;
     opacity: 0;
     transition: opacity 1s ease-in-out;
+    /* Adjust the duration and easing as needed */
 }
 
-.mySlides.show,
-.mySlidesText.show {
+.mySlides.active,
+.mySlidesText.active {
+    display: block;
     opacity: 1;
 }
 
