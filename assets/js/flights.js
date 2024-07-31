@@ -35,7 +35,7 @@ function getFlights() {
 			const options = {
 				method: "GET",
 				headers: {
-					'X-RapidAPI-Key': '3b5ffebec4msh78615bdda56178ep13d71djsna0c793d231e7',
+					'X-RapidAPI-Key': '3f71436c3cmshf2e0a17479ecd54p1955a7jsnee17f1837d3e',
 					'X-RapidAPI-Host': 'booking-com13.p.rapidapi.com'
 				},
 			};
