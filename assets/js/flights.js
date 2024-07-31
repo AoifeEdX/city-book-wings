@@ -1,5 +1,4 @@
-// Search flights when "Search" button is clicked...
-function getFlights() {
+async function getFlights() {
 	// Clear previous search results
 	var flightResults = document.getElementById("flightResults");
 	flightResults.innerHTML = "";
@@ -16,49 +15,50 @@ function getFlights() {
 		exchangeRateAPIKey +
 		"/pair/USD/GBP";
 
-	fetch(exchangeRateURL)
-		.then(function (response) {
-			return response.json();
-		})
-		.then(function (exchangeRateData) {
-			var exchangeRate = exchangeRateData.conversion_rate;
+	try {
+		let exchangeRateResponse = await fetch(exchangeRateURL);
+		let exchangeRateData = await exchangeRateResponse.json();
+		var exchangeRate = exchangeRateData.conversion_rate;
 
-			const url =
-				"https://booking-com13.p.rapidapi.com/flights/one-way?location_from=" +
-				encodeURIComponent(locationFrom) +
-				"&location_to=" +
-				encodeURIComponent(locationTo) +
-				"&departure_date=" +
-				departureDate +
-				"&number_of_stops=NonstopFlights";
+		const url = "https://booking-com18.p.rapidapi.com/flights/search-oneway?fromId=" +
+			encodeURIComponent(locationFrom) +
+			"&toId=" +
+			encodeURIComponent(locationTo) +
+			"&departureDate=" +
+			departureDate +
+			"&cabinClass=ECONOMY&numberOfStops=nonstop_flights";
 
-			const options = {
-				method: "GET",
-				headers: {
-					'X-RapidAPI-Key': '3b5ffebec4msh78615bdda56178ep13d71djsna0c793d231e7',
-					'X-RapidAPI-Host': 'booking-com13.p.rapidapi.com'
-				},
-			};
+		const options = {
+			method: 'GET',
+			headers: {
+				'x-rapidapi-key': 'dd014921fcmsh17ab84c0ce0fae4p134d06jsn6210368d353d',
+				'x-rapidapi-host': 'booking-com18.p.rapidapi.com'
+			}
+		};
 
-			// Fetch data from the flight API using the constructed URL and options
-			fetch(url, options)
-				.then(function (response) {
-					return response.json();
-				})
-				.then(function (data) {
-					updateflightResults(data, exchangeRate);
-				})
-				.catch(function (error) {
-					console.error(error);
-				});
-		})
-		.catch(function (error) {
-			console.error(error);
-		});
+		try {
+			let response = await fetch(url, options);
+			if (!response.ok) {
+				throw new Error(`HTTP error! Status: ${response.status}`);
+			}
+			let data = await response.json();
+			updateflightResults(data, exchangeRate);
+		} catch (error) {
+			console.error('Error fetching flight data:', error);
+			flightResults.innerHTML =
+				'<p class="fs-4 my-3 text-danger text-center">Error fetching flight data.</p>';
+		}
+
+	} catch (error) {
+		console.error('Error fetching exchange rate data:', error);
+		flightResults.innerHTML =
+			'<p class="fs-4 my-3 text-danger text-center">Error fetching exchange rate data.</p>';
+	}
 }
 
 // Function to update the search results on the webpage
 function updateflightResults(results, exchangeRate) {
+	var flightResults = document.getElementById("flightResults");
 	var containerDiv = document.createElement("div");
 	containerDiv.innerHTML =
 		'<h2 class="my-5 py-5 text-center">Find flights to your travel destination...</h2>';

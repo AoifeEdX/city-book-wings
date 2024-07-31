@@ -1,13 +1,33 @@
-// Search books when "Search" button is clicked...
+// Create a map of airport codes to city names for quick lookup
+var airportCodeToCityNameMap = {
+	"BER": "Berlin, Germany",
+	"MAA": "Chennai (Madras), India",
+	"DUB": "Dublin, Ireland",
+	"LHR": "London, United Kingdom",
+	"LAX": "Los Angeles, USA, California",
+	"CDG": "Paris, France",
+	"FCO": "Rome, Italy",
+	"PVG": "Shanghai, China",
+	"ARN": "Stockholm, Sweden",
+	"HND": "Tokyo, Japan"
+};
+
+// Function to get books based on the destination city
 function getBooks() {
 	// Clear previous search results
 	var bookResults = document.getElementById("bookResults");
 	bookResults.innerHTML = "";
 
+	// Get the selected airport code
+	var locationToCode = document.getElementById("locationTo").value;
+
+	// Convert the airport code to the corresponding city name
+	var locationToCity = airportCodeToCityNameMap[locationToCode];
+
 	// Fetch data from Open Library URL
 	fetch(
 		"https://openlibrary.org/search.json?q=" +
-		document.getElementById("locationTo").value +
+		encodeURIComponent(locationToCity) +
 		"&subject=fiction"
 	)
 		.then(function (response) {
